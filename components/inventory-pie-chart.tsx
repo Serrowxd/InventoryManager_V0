@@ -1,5 +1,7 @@
 "use client"
 
+import type React from "react"
+
 import { useState, useEffect } from "react"
 
 interface InventoryPieChartProps {
@@ -10,6 +12,21 @@ interface InventoryPieChartProps {
 export function InventoryPieChart({ selectedCategory, onCategorySelect }: InventoryPieChartProps) {
   const [data, setData] = useState<any[]>([])
   const [isClient, setIsClient] = useState(false)
+  const [tooltip, setTooltip] = useState<{
+    x: number
+    y: number
+    name: string
+    value: number
+    percentage: number
+    visible: boolean
+  }>({
+    x: 0,
+    y: 0,
+    name: "",
+    value: 0,
+    percentage: 0,
+    visible: false,
+  })
 
   useEffect(() => {
     setIsClient(true)
@@ -65,6 +82,25 @@ export function InventoryPieChart({ selectedCategory, onCategorySelect }: Invent
     onCategorySelect(selectedCategory === mappedKey ? null : mappedKey)
   }
 
+  const handleMouseEnter = (event: React.MouseEvent, name: string, value: number, percentage: number) => {
+    const rect = event.currentTarget.getBoundingClientRect()
+    const containerRect = event.currentTarget.closest(".h-80")?.getBoundingClientRect()
+    if (containerRect) {
+      setTooltip({
+        x: rect.left + rect.width / 2 - containerRect.left,
+        y: rect.top + rect.height / 2 - containerRect.top,
+        name,
+        value,
+        percentage,
+        visible: true,
+      })
+    }
+  }
+
+  const handleMouseLeave = () => {
+    setTooltip((prev) => ({ ...prev, visible: false }))
+  }
+
   return (
     <div className="h-80 w-full flex flex-col items-center">
       <div className="relative w-48 h-48">
@@ -97,10 +133,28 @@ export function InventoryPieChart({ selectedCategory, onCategorySelect }: Invent
                 opacity={getSliceOpacity(item.name)}
                 className="cursor-pointer transition-opacity duration-200 hover:opacity-80"
                 onClick={() => handleSliceClick(item.name)}
+                onMouseEnter={(e) => handleMouseEnter(e, item.name, item.value, (item.value / total) * 100)}
+                onMouseLeave={handleMouseLeave}
               />
             )
           })}
         </svg>
+        {/* Tooltip */}
+        {tooltip.visible && (
+          <div
+            className="absolute z-10 bg-white border border-gray-200 rounded-lg shadow-lg p-3 pointer-events-none"
+            style={{
+              left: tooltip.x,
+              top: tooltip.y,
+              transform: "translate(-50%, -50%)",
+            }}
+          >
+            <div className="text-sm font-medium text-gray-900">{tooltip.name}</div>
+            <div className="text-sm text-gray-600">
+              {tooltip.value} items ({tooltip.percentage.toFixed(1)}%)
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Legend */}

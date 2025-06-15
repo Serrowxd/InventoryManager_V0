@@ -1,5 +1,7 @@
 "use client"
 
+import type React from "react"
+
 import { useState, useEffect } from "react"
 
 interface InventoryBarChartProps {
@@ -10,6 +12,21 @@ interface InventoryBarChartProps {
 export function InventoryBarChart({ selectedCategory, onCategorySelect }: InventoryBarChartProps) {
   const [data, setData] = useState<any[]>([])
   const [isClient, setIsClient] = useState(false)
+  const [tooltip, setTooltip] = useState<{
+    x: number
+    y: number
+    category: string
+    type: string
+    value: number
+    visible: boolean
+  }>({
+    x: 0,
+    y: 0,
+    category: "",
+    type: "",
+    value: 0,
+    visible: false,
+  })
 
   useEffect(() => {
     setIsClient(true)
@@ -66,10 +83,29 @@ export function InventoryBarChart({ selectedCategory, onCategorySelect }: Invent
     }
   }
 
+  const handleMouseEnter = (event: React.MouseEvent, category: string, type: string, value: number) => {
+    const rect = event.currentTarget.getBoundingClientRect()
+    const containerRect = event.currentTarget.closest(".h-80")?.getBoundingClientRect()
+    if (containerRect) {
+      setTooltip({
+        x: rect.left + rect.width / 2 - containerRect.left,
+        y: rect.top - containerRect.top,
+        category,
+        type,
+        value,
+        visible: true,
+      })
+    }
+  }
+
+  const handleMouseLeave = () => {
+    setTooltip((prev) => ({ ...prev, visible: false }))
+  }
+
   return (
     <div className="h-80 w-full">
       {/* Chart Area */}
-      <div className="h-64 flex items-end justify-between px-4 py-4 bg-gray-50 rounded-lg mb-4">
+      <div className="h-64 flex items-end justify-between px-4 py-4 bg-gray-50 rounded-lg mb-4 relative">
         {data.map((item, index) => {
           const total = item.inStock + item.inTransit + item.outOfStock + item.suggested
           const maxHeight = 200 // pixels
@@ -87,6 +123,8 @@ export function InventoryBarChart({ selectedCategory, onCategorySelect }: Invent
                     opacity: getOpacity("inStock"),
                   }}
                   onClick={() => handleCategoryClick("inStock")}
+                  onMouseEnter={(e) => handleMouseEnter(e, item.category, "In Stock", item.inStock)}
+                  onMouseLeave={handleMouseLeave}
                   title={`${labels.inStock}: ${item.inStock}`}
                 />
 
@@ -99,6 +137,8 @@ export function InventoryBarChart({ selectedCategory, onCategorySelect }: Invent
                     opacity: getOpacity("inTransit"),
                   }}
                   onClick={() => handleCategoryClick("inTransit")}
+                  onMouseEnter={(e) => handleMouseEnter(e, item.category, "In Transit", item.inTransit)}
+                  onMouseLeave={handleMouseLeave}
                   title={`${labels.inTransit}: ${item.inTransit}`}
                 />
 
@@ -111,6 +151,8 @@ export function InventoryBarChart({ selectedCategory, onCategorySelect }: Invent
                     opacity: getOpacity("outOfStock"),
                   }}
                   onClick={() => handleCategoryClick("outOfStock")}
+                  onMouseEnter={(e) => handleMouseEnter(e, item.category, "Out of Stock", item.outOfStock)}
+                  onMouseLeave={handleMouseLeave}
                   title={`${labels.outOfStock}: ${item.outOfStock}`}
                 />
 
@@ -123,6 +165,8 @@ export function InventoryBarChart({ selectedCategory, onCategorySelect }: Invent
                     opacity: getOpacity("suggested"),
                   }}
                   onClick={() => handleCategoryClick("suggested")}
+                  onMouseEnter={(e) => handleMouseEnter(e, item.category, "Suggested", item.suggested)}
+                  onMouseLeave={handleMouseLeave}
                   title={`${labels.suggested}: ${item.suggested}`}
                 />
               </div>
@@ -135,6 +179,22 @@ export function InventoryBarChart({ selectedCategory, onCategorySelect }: Invent
             </div>
           )
         })}
+        {/* Tooltip */}
+        {tooltip.visible && (
+          <div
+            className="absolute z-10 bg-white border border-gray-200 rounded-lg shadow-lg p-3 pointer-events-none"
+            style={{
+              left: tooltip.x,
+              top: tooltip.y - 10,
+              transform: "translateX(-50%)",
+            }}
+          >
+            <div className="text-sm font-medium text-gray-900">{tooltip.category}</div>
+            <div className="text-sm text-gray-600">
+              {tooltip.type}: {tooltip.value} items
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Legend */}
