@@ -8,6 +8,7 @@ import { InventoryBarChart } from "@/components/inventory-bar-chart"
 import { InventoryPieChart } from "@/components/inventory-pie-chart"
 import { InventoryLineChart } from "@/components/inventory-line-chart"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
+import { ThemeToggle } from "@/components/theme-toggle"
 
 interface DashboardProps {
   onOpenChatbot: () => void
@@ -86,9 +87,10 @@ export function Dashboard({ onOpenChatbot }: DashboardProps) {
         {/* Header */}
         <div className="flex items-center justify-between">
           <div>
-            <h1 className="text-2xl font-semibold text-gray-900">Inventory Dashboard</h1>
-            <p className="text-gray-600 mt-1">Monitor and manage your inventory in real-time</p>
+            <h1 className="text-2xl font-semibold text-foreground">Inventory Dashboard</h1>
+            <p className="text-muted-foreground mt-1">Monitor and manage your inventory in real-time</p>
           </div>
+          <ThemeToggle />
         </div>
 
         {/* Stats Cards */}
@@ -96,11 +98,11 @@ export function Dashboard({ onOpenChatbot }: DashboardProps) {
           {statsDisplay.map((stat, index) => (
             <Card key={index} className="border-0 shadow-sm">
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                <CardTitle className="text-sm font-medium text-gray-600 flex items-center gap-2">
+                <CardTitle className="text-sm font-medium text-muted-foreground flex items-center gap-2">
                   {stat.title}
                   <Tooltip>
                     <TooltipTrigger asChild>
-                      <Info className="w-4 h-4 text-gray-400 hover:text-gray-600 cursor-help" />
+                      <Info className="w-4 h-4 text-muted-foreground hover:text-foreground cursor-help" />
                     </TooltipTrigger>
                     <TooltipContent>
                       <p className="max-w-xs">{stat.info}</p>
@@ -109,8 +111,10 @@ export function Dashboard({ onOpenChatbot }: DashboardProps) {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="text-2xl font-bold text-gray-900">{stat.value}</div>
-                <p className={`text-xs ${stat.positive ? "text-green-600" : "text-red-600"} mt-1`}>
+                <div className="text-2xl font-bold text-foreground">{stat.value}</div>
+                <p
+                  className={`text-xs ${stat.positive ? "text-green-600 dark:text-green-400" : "text-red-600 dark:text-red-400"} mt-1`}
+                >
                   {stat.change} from last month
                 </p>
               </CardContent>
@@ -119,18 +123,18 @@ export function Dashboard({ onOpenChatbot }: DashboardProps) {
         </div>
 
         {/* AI Assistant Section */}
-        <Card className="border-0 shadow-sm bg-gradient-to-r from-blue-50 to-indigo-50">
+        <Card className="border-0 shadow-sm bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950/50 dark:to-indigo-950/50">
           <CardContent className="p-6">
             <div className="flex items-center justify-between">
               <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Hello! Need help with your inventory?</h3>
-                <p className="text-gray-600">
+                <h3 className="text-lg font-semibold text-foreground mb-2">Hello! Need help with your inventory?</h3>
+                <p className="text-muted-foreground">
                   Ask our AI assistant about stock levels, trends, or get recommendations for your inventory management.
                 </p>
               </div>
               <Button
                 onClick={onOpenChatbot}
-                className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg flex items-center gap-2"
+                className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-700 text-white px-6 py-2 rounded-lg flex items-center gap-2"
               >
                 <Bot className="w-4 h-4" />
                 Open AI Assistant
@@ -147,7 +151,7 @@ export function Dashboard({ onOpenChatbot }: DashboardProps) {
                 Inventory Levels by Category
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <Info className="w-4 h-4 text-gray-400 hover:text-gray-600 cursor-help" />
+                    <Info className="w-4 h-4 text-muted-foreground hover:text-foreground cursor-help" />
                   </TooltipTrigger>
                   <TooltipContent>
                     <p>Green: In stock, Yellow: In transit, Red: Out of stock, Blue: Suggested reorder</p>
@@ -166,7 +170,7 @@ export function Dashboard({ onOpenChatbot }: DashboardProps) {
                 Stock Distribution
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <Info className="w-4 h-4 text-gray-400 hover:text-gray-600 cursor-help" />
+                    <Info className="w-4 h-4 text-muted-foreground hover:text-foreground cursor-help" />
                   </TooltipTrigger>
                   <TooltipContent>
                     <p>Overall distribution of inventory across different status categories</p>
@@ -185,7 +189,7 @@ export function Dashboard({ onOpenChatbot }: DashboardProps) {
                 Inventory Trends (Last 7 Weeks)
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <Info className="w-4 h-4 text-gray-400 hover:text-gray-600 cursor-help" />
+                    <Info className="w-4 h-4 text-muted-foreground hover:text-foreground cursor-help" />
                   </TooltipTrigger>
                   <TooltipContent>
                     <p>Track inventory changes over time to identify patterns and trends</p>

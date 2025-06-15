@@ -34,7 +34,7 @@ export function Sidebar({ currentPage, onNavigate, onOpenChatbot, onOpenHelp }: 
   }
 
   return (
-    <div className="w-16 bg-white border-r border-gray-200 flex flex-col items-center py-4 shadow-sm">
+    <div className="w-16 bg-background border-r border-border flex flex-col items-center py-4 shadow-sm">
       <div className="mb-8">
         <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
           <Package className="w-5 h-5 text-white" />
@@ -50,8 +50,8 @@ export function Sidebar({ currentPage, onNavigate, onOpenChatbot, onOpenHelp }: 
             className={cn(
               "w-12 h-12 rounded-xl transition-all duration-200",
               currentPage === item.id
-                ? "bg-blue-50 text-blue-600 shadow-sm"
-                : "text-gray-600 hover:bg-gray-50 hover:text-gray-900",
+                ? "bg-blue-50 dark:bg-blue-950/50 text-blue-600 dark:text-blue-400 shadow-sm"
+                : "text-muted-foreground hover:bg-accent hover:text-foreground",
             )}
             onClick={() => handleItemClick(item)}
             title={item.label}
@@ -70,8 +70,8 @@ export function Sidebar({ currentPage, onNavigate, onOpenChatbot, onOpenHelp }: 
             className={cn(
               "w-12 h-12 rounded-xl transition-all duration-200",
               currentPage === item.id
-                ? "bg-blue-50 text-blue-600 shadow-sm"
-                : "text-gray-600 hover:bg-gray-50 hover:text-gray-900",
+                ? "bg-blue-50 dark:bg-blue-950/50 text-blue-600 dark:text-blue-400 shadow-sm"
+                : "text-muted-foreground hover:bg-accent hover:text-foreground",
             )}
             onClick={() => handleItemClick(item)}
             title={item.label}
