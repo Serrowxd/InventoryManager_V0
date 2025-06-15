@@ -16,10 +16,12 @@ interface DashboardProps {
 export function Dashboard({ onOpenChatbot }: DashboardProps) {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null)
   const [stats, setStats] = useState({
-    totalItems: 2847,
-    lowStockItems: 23,
-    inTransit: 156,
-    totalValue: 84392,
+    totalItems: 4247,
+    lowStockItems: 31,
+    inTransit: 287,
+    totalValue: 142850,
+    dailySales: 847,
+    monthlySales: 25410,
   })
 
   useEffect(() => {
@@ -37,28 +39,42 @@ export function Dashboard({ onOpenChatbot }: DashboardProps) {
     {
       title: "Total Items",
       value: stats.totalItems.toLocaleString(),
-      change: "+12%",
+      change: "+15%",
       positive: true,
       info: "Total number of items currently in inventory across all categories",
     },
     {
+      title: "Daily Sales",
+      value: stats.dailySales.toLocaleString(),
+      change: "+8%",
+      positive: true,
+      info: "Number of items sold today across all categories",
+    },
+    {
+      title: "Monthly Sales",
+      value: stats.monthlySales.toLocaleString(),
+      change: "+22%",
+      positive: true,
+      info: "Total number of items sold this month across all categories",
+    },
+    {
       title: "Low Stock Items",
       value: stats.lowStockItems.toString(),
-      change: "-8%",
+      change: "-5%",
       positive: true,
       info: "Items that are below the minimum stock threshold and need reordering",
     },
     {
       title: "In Transit",
       value: stats.inTransit.toString(),
-      change: "+24%",
+      change: "+28%",
       positive: true,
       info: "Items currently being shipped or in the process of delivery",
     },
     {
       title: "Value",
       value: `$${stats.totalValue.toLocaleString()}`,
-      change: "+18%",
+      change: "+19%",
       positive: true,
       info: "Total monetary value of all inventory items at current market prices",
     },
@@ -76,7 +92,7 @@ export function Dashboard({ onOpenChatbot }: DashboardProps) {
         </div>
 
         {/* Stats Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {statsDisplay.map((stat, index) => (
             <Card key={index} className="border-0 shadow-sm">
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
@@ -166,7 +182,7 @@ export function Dashboard({ onOpenChatbot }: DashboardProps) {
           <Card className="border-0 shadow-sm lg:col-span-2">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                Inventory Trends (Last 30 Days)
+                Inventory Trends (Last 7 Weeks)
                 <Tooltip>
                   <TooltipTrigger asChild>
                     <Info className="w-4 h-4 text-gray-400 hover:text-gray-600 cursor-help" />
