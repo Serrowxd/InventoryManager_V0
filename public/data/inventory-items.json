@@ -1,0 +1,108 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "name": "MacBook Pro 16\"",
+      "category": "Electronics",
+      "onHand": 45,
+      "inTransit": 15,
+      "unitCost": 2499.0,
+      "demand": "high",
+      "status": "in_stock",
+      "dailySales": [
+        12, 8, 15, 10, 18, 14, 9, 11, 16, 13, 7, 20, 12, 9, 14, 11, 17, 8, 13, 15, 10, 19, 12, 6, 14, 16, 11, 9, 13, 18
+      ],
+      "estimatedDemand": [15, 17, 14, 16, 19, 13, 15, 18, 12, 16]
+    },
+    {
+      "id": 2,
+      "name": "iPhone 15 Pro",
+      "category": "Electronics",
+      "onHand": 120,
+      "inTransit": 30,
+      "unitCost": 999.0,
+      "demand": "high",
+      "status": "in_stock",
+      "dailySales": [
+        25, 30, 28, 35, 22, 27, 31, 29, 33, 26, 24, 38, 32, 28, 30, 27, 34, 25, 29, 36, 31, 28, 33, 27, 30, 35, 29, 26,
+        32, 37
+      ],
+      "estimatedDemand": [32, 35, 30, 33, 38, 29, 34, 36, 28, 35]
+    },
+    {
+      "id": 3,
+      "name": "Wireless Headphones",
+      "category": "Electronics",
+      "onHand": 8,
+      "inTransit": 25,
+      "unitCost": 199.99,
+      "demand": "medium",
+      "status": "low_stock",
+      "dailySales": [5, 7, 4, 8, 6, 5, 9, 7, 6, 8, 4, 10, 7, 5, 6, 8, 9, 4, 7, 8, 6, 9, 5, 7, 8, 6, 9, 7, 5, 8],
+      "estimatedDemand": [7, 8, 6, 9, 7, 8, 6, 9, 7, 8]
+    },
+    {
+      "id": 4,
+      "name": "Gaming Chair",
+      "category": "Furniture",
+      "onHand": 0,
+      "inTransit": 12,
+      "unitCost": 299.99,
+      "demand": "low",
+      "status": "out_of_stock",
+      "dailySales": [2, 1, 3, 2, 1, 2, 3, 1, 2, 3, 1, 4, 2, 1, 2, 3, 2, 1, 3, 2, 1, 3, 2, 1, 2, 3, 1, 2, 3, 2],
+      "estimatedDemand": [2, 3, 2, 2, 3, 2, 3, 2, 2, 3]
+    },
+    {
+      "id": 5,
+      "name": "Bluetooth Speaker",
+      "category": "Electronics",
+      "onHand": 65,
+      "inTransit": 0,
+      "unitCost": 79.99,
+      "demand": "medium",
+      "status": "in_stock",
+      "dailySales": [8, 6, 9, 7, 8, 6, 10, 8, 7, 9, 6, 11, 8, 7, 8, 9, 10, 6, 8, 9, 7, 10, 8, 6, 9, 8, 7, 9, 8, 10],
+      "estimatedDemand": [8, 9, 7, 10, 8, 9, 7, 10, 8, 9]
+    },
+    {
+      "id": 6,
+      "name": "Desk Lamp",
+      "category": "Home & Garden",
+      "onHand": 22,
+      "inTransit": 8,
+      "unitCost": 45.99,
+      "demand": "low",
+      "status": "suggested",
+      "dailySales": [3, 2, 4, 3, 2, 3, 4, 2, 3, 4, 2, 5, 3, 2, 3, 4, 3, 2, 4, 3, 2, 4, 3, 2, 3, 4, 2, 3, 4, 3],
+      "estimatedDemand": [3, 4, 3, 3, 4, 3, 4, 3, 3, 4]
+    },
+    {
+      "id": 7,
+      "name": "Running Shoes",
+      "category": "Sports",
+      "onHand": 85,
+      "inTransit": 20,
+      "unitCost": 129.99,
+      "demand": "high",
+      "status": "in_stock",
+      "dailySales": [
+        15, 18, 14, 20, 16, 15, 22, 18, 16, 19, 14, 24, 18, 15, 17, 19, 21, 14, 18, 20, 16, 22, 18, 15, 19, 20, 17, 16,
+        18, 23
+      ],
+      "estimatedDemand": [18, 20, 17, 21, 19, 20, 17, 21, 18, 20]
+    },
+    {
+      "id": 8,
+      "name": "Coffee Maker",
+      "category": "Home & Garden",
+      "onHand": 12,
+      "inTransit": 5,
+      "unitCost": 89.99,
+      "demand": "medium",
+      "status": "low_stock",
+      "dailySales": [4, 5, 3, 6, 4, 5, 7, 5, 4, 6, 3, 8, 5, 4, 5, 6, 7, 3, 5, 6, 4, 7, 5, 4, 6, 5, 4, 6, 5, 7],
+      "estimatedDemand": [5, 6, 5, 7, 5, 6, 5, 7, 5, 6]
+    }
+  ]
+}

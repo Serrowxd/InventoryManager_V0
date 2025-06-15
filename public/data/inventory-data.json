@@ -1,0 +1,90 @@
+{
+  "stats": {
+    "totalItems": 2847,
+    "lowStockItems": 23,
+    "inTransit": 156,
+    "totalValue": 84392
+  },
+  "barChartData": [
+    {
+      "category": "Electronics",
+      "inStock": 450,
+      "inTransit": 120,
+      "outOfStock": 25,
+      "suggested": 80
+    },
+    {
+      "category": "Clothing",
+      "inStock": 320,
+      "inTransit": 85,
+      "outOfStock": 12,
+      "suggested": 45
+    },
+    {
+      "category": "Home & Garden",
+      "inStock": 280,
+      "inTransit": 95,
+      "outOfStock": 18,
+      "suggested": 60
+    },
+    {
+      "category": "Sports",
+      "inStock": 180,
+      "inTransit": 40,
+      "outOfStock": 8,
+      "suggested": 30
+    }
+  ],
+  "pieChartData": [
+    {
+      "name": "In Stock",
+      "value": 1230,
+      "color": "#10b981"
+    },
+    {
+      "name": "In Transit",
+      "value": 340,
+      "color": "#f59e0b"
+    },
+    {
+      "name": "Out of Stock",
+      "value": 63,
+      "color": "#ef4444"
+    },
+    {
+      "name": "Suggested",
+      "value": 215,
+      "color": "#3b82f6"
+    }
+  ],
+  "lineChartData": [
+    {
+      "date": "Jan 1",
+      "inStock": 1200,
+      "inTransit": 300,
+      "outOfStock": 50,
+      "suggested": 200
+    },
+    {
+      "date": "Jan 8",
+      "inStock": 1150,
+      "inTransit": 320,
+      "outOfStock": 45,
+      "suggested": 210
+    },
+    {
+      "date": "Jan 15",
+      "inStock": 1180,
+      "inTransit": 280,
+      "outOfStock": 60,
+      "suggested": 190
+    },
+    {
+      "date": "Jan 22",
+      "inStock": 1230,
+      "inTransit": 340,
+      "outOfStock": 63,
+      "suggested": 215
+    }
+  ]
+}
