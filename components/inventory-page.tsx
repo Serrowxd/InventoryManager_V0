@@ -37,13 +37,13 @@ export function InventoryPage() {
   const getDemandColor = (demand: string) => {
     switch (demand) {
       case "high":
-        return "text-green-600 bg-green-50"
+        return "text-green-700 bg-green-100 dark:text-green-400 dark:bg-green-900/30"
       case "medium":
-        return "text-yellow-600 bg-yellow-50"
+        return "text-yellow-700 bg-yellow-100 dark:text-yellow-400 dark:bg-yellow-900/30"
       case "low":
-        return "text-red-600 bg-red-50"
+        return "text-red-700 bg-red-100 dark:text-red-400 dark:bg-red-900/30"
       default:
-        return "text-gray-600 bg-gray-50"
+        return "text-muted-foreground bg-muted"
     }
   }
 
@@ -75,34 +75,34 @@ export function InventoryPage() {
     <div className="p-6">
       <div className="max-w-7xl mx-auto">
         <div className="mb-6">
-          <h1 className="text-2xl font-semibold text-gray-900">Inventory Management</h1>
-          <p className="text-gray-600 mt-1">Manage your complete inventory with detailed insights</p>
+          <h1 className="text-2xl font-semibold text-foreground">Inventory Management</h1>
+          <p className="text-muted-foreground mt-1">Manage your complete inventory with detailed insights</p>
         </div>
 
         <Card className="border-0 shadow-sm">
           <CardHeader>
             <CardTitle className="flex items-center justify-between">
               <span>All Items ({items.length})</span>
-              <span className="text-sm font-normal text-gray-500">{selectedItems.length} selected</span>
+              <span className="text-sm font-normal text-muted-foreground">{selectedItems.length} selected</span>
             </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="overflow-x-auto">
               <table className="w-full">
                 <thead>
-                  <tr className="border-b border-gray-200">
-                    <th className="text-left py-3 px-4 font-medium text-gray-700">
+                  <tr className="border-b border-border">
+                    <th className="text-left py-3 px-4 font-medium text-muted-foreground">
                       <Checkbox
                         checked={selectedItems.length === items.length && items.length > 0}
                         onCheckedChange={handleSelectAll}
                       />
                     </th>
-                    <th className="text-left py-3 px-4 font-medium text-gray-700">Item</th>
-                    <th className="text-left py-3 px-4 font-medium text-gray-700">Category</th>
-                    <th className="text-left py-3 px-4 font-medium text-gray-700">Current</th>
-                    <th className="text-left py-3 px-4 font-medium text-gray-700">Investment</th>
-                    <th className="text-left py-3 px-4 font-medium text-gray-700">Demand</th>
-                    <th className="text-left py-3 px-4 font-medium text-gray-700">Status</th>
+                    <th className="text-left py-3 px-4 font-medium text-muted-foreground">Item</th>
+                    <th className="text-left py-3 px-4 font-medium text-muted-foreground">Category</th>
+                    <th className="text-left py-3 px-4 font-medium text-muted-foreground">Current</th>
+                    <th className="text-left py-3 px-4 font-medium text-muted-foreground">Investment</th>
+                    <th className="text-left py-3 px-4 font-medium text-muted-foreground">Demand</th>
+                    <th className="text-left py-3 px-4 font-medium text-muted-foreground">Status</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -111,7 +111,7 @@ export function InventoryPage() {
                     return (
                       <tr
                         key={item.id}
-                        className="border-b border-gray-100 hover:bg-gray-50 transition-colors cursor-pointer"
+                        className="border-b border-border hover:bg-muted/50 transition-colors cursor-pointer"
                         onClick={() => handleItemClick(item)}
                       >
                         <td className="py-3 px-4">
@@ -122,20 +122,20 @@ export function InventoryPage() {
                           />
                         </td>
                         <td className="py-3 px-4">
-                          <div className="font-medium text-gray-900">{item.name}</div>
+                          <div className="font-medium text-foreground">{item.name}</div>
                         </td>
                         <td className="py-3 px-4">
-                          <span className="text-gray-600">{item.category}</span>
+                          <span className="text-muted-foreground">{item.category}</span>
                         </td>
                         <td className="py-3 px-4">
-                          <div className="font-medium text-gray-900">{item.onHand + item.inTransit}</div>
-                          <div className="text-xs text-gray-500">
+                          <div className="font-medium text-foreground">{item.onHand + item.inTransit}</div>
+                          <div className="text-xs text-muted-foreground">
                             {item.onHand} on hand + {item.inTransit} transit
                           </div>
                         </td>
                         <td className="py-3 px-4">
-                          <div className="font-medium text-gray-900">{formatCurrency(totalInvestment)}</div>
-                          <div className="text-xs text-gray-500">{formatCurrency(item.unitCost)} per unit</div>
+                          <div className="font-medium text-foreground">{formatCurrency(totalInvestment)}</div>
+                          <div className="text-xs text-muted-foreground">{formatCurrency(item.unitCost)} per unit</div>
                         </td>
                         <td className="py-3 px-4">
                           <span
@@ -170,15 +170,15 @@ function StatusBadge({ status }: { status: string }) {
   const getStatusStyle = (status: string) => {
     switch (status) {
       case "in_stock":
-        return "text-green-700 bg-green-100"
+        return "text-green-700 bg-green-100 dark:text-green-400 dark:bg-green-900/30"
       case "low_stock":
-        return "text-yellow-700 bg-yellow-100"
+        return "text-yellow-700 bg-yellow-100 dark:text-yellow-400 dark:bg-yellow-900/30"
       case "out_of_stock":
-        return "text-red-700 bg-red-100"
+        return "text-red-700 bg-red-100 dark:text-red-400 dark:bg-red-900/30"
       case "suggested":
-        return "text-blue-700 bg-blue-100"
+        return "text-blue-700 bg-blue-100 dark:text-blue-400 dark:bg-blue-900/30"
       default:
-        return "text-gray-700 bg-gray-100"
+        return "text-muted-foreground bg-muted"
     }
   }
 

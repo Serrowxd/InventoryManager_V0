@@ -37,10 +37,10 @@ export function InventoryPieChart({ selectedCategory, onCategorySelect }: Invent
       .catch(() => {
         // Fallback data if JSON fails to load
         setData([
-          { name: "In Stock", value: 1230, color: "#10b981" },
-          { name: "In Transit", value: 340, color: "#f59e0b" },
-          { name: "Out of Stock", value: 63, color: "#ef4444" },
-          { name: "Suggested", value: 215, color: "#3b82f6" },
+          { name: "In Stock", value: 2230, color: "#10b981" },
+          { name: "In Transit", value: 570, color: "#f59e0b" },
+          { name: "Out of Stock", value: 113, color: "#ef4444" },
+          { name: "Suggested", value: 367, color: "#3b82f6" },
         ])
       })
   }, [])
@@ -48,7 +48,7 @@ export function InventoryPieChart({ selectedCategory, onCategorySelect }: Invent
   if (!isClient) {
     return (
       <div className="h-80 w-full flex items-center justify-center">
-        <div className="text-gray-500">Loading chart...</div>
+        <div className="text-muted-foreground">Loading chart...</div>
       </div>
     )
   }
@@ -142,15 +142,15 @@ export function InventoryPieChart({ selectedCategory, onCategorySelect }: Invent
         {/* Tooltip */}
         {tooltip.visible && (
           <div
-            className="absolute z-10 bg-white border border-gray-200 rounded-lg shadow-lg p-3 pointer-events-none"
+            className="absolute z-10 bg-popover border border-border rounded-lg shadow-lg p-3 pointer-events-none"
             style={{
               left: tooltip.x,
               top: tooltip.y,
               transform: "translate(-50%, -50%)",
             }}
           >
-            <div className="text-sm font-medium text-gray-900">{tooltip.name}</div>
-            <div className="text-sm text-gray-600">
+            <div className="text-sm font-medium text-popover-foreground">{tooltip.name}</div>
+            <div className="text-sm text-muted-foreground">
               {tooltip.value} items ({tooltip.percentage.toFixed(1)}%)
             </div>
           </div>
@@ -172,7 +172,7 @@ export function InventoryPieChart({ selectedCategory, onCategorySelect }: Invent
                 opacity: getSliceOpacity(item.name),
               }}
             />
-            <span className="text-sm text-gray-600">
+            <span className="text-sm text-muted-foreground">
               {item.name} ({item.value})
             </span>
           </div>

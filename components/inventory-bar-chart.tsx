@@ -37,18 +37,20 @@ export function InventoryBarChart({ selectedCategory, onCategorySelect }: Invent
       .catch(() => {
         // Fallback data if JSON fails to load
         setData([
-          { category: "Electronics", inStock: 450, inTransit: 120, outOfStock: 25, suggested: 80 },
-          { category: "Clothing", inStock: 320, inTransit: 85, outOfStock: 12, suggested: 45 },
-          { category: "Home & Garden", inStock: 280, inTransit: 95, outOfStock: 18, suggested: 60 },
-          { category: "Sports", inStock: 180, inTransit: 40, outOfStock: 8, suggested: 30 },
+          { category: "Electronics", inStock: 650, inTransit: 145, outOfStock: 35, suggested: 95 },
+          { category: "Clothing", inStock: 420, inTransit: 105, outOfStock: 18, suggested: 62 },
+          { category: "Home & Garden", inStock: 380, inTransit: 125, outOfStock: 25, suggested: 78 },
+          { category: "Sports", inStock: 280, inTransit: 65, outOfStock: 12, suggested: 45 },
+          { category: "Furniture", inStock: 180, inTransit: 45, outOfStock: 8, suggested: 32 },
+          { category: "Health & Fitness", inStock: 320, inTransit: 85, outOfStock: 15, suggested: 55 },
         ])
       })
   }, [])
 
   if (!isClient || data.length === 0) {
     return (
-      <div className="h-80 w-full flex items-center justify-center bg-gray-50 rounded-lg">
-        <div className="text-gray-500">Loading inventory data...</div>
+      <div className="h-80 w-full flex items-center justify-center bg-muted rounded-lg">
+        <div className="text-muted-foreground">Loading inventory data...</div>
       </div>
     )
   }
@@ -109,7 +111,7 @@ export function InventoryBarChart({ selectedCategory, onCategorySelect }: Invent
   return (
     <div className="h-80 w-full">
       {/* Chart Area */}
-      <div className="h-64 flex items-end justify-between px-4 py-4 bg-gray-50 rounded-lg mb-4 relative">
+      <div className="h-64 flex items-end justify-between px-4 py-4 bg-muted rounded-lg mb-4 relative">
         {data.map((item, index) => {
           const total = item.inStock + item.inTransit + item.outOfStock + item.suggested
           const maxHeight = 200 // pixels
@@ -176,10 +178,10 @@ export function InventoryBarChart({ selectedCategory, onCategorySelect }: Invent
               </div>
 
               {/* Category Label */}
-              <div className="mt-2 text-xs text-gray-600 text-center font-medium">{item.category}</div>
+              <div className="mt-2 text-xs text-muted-foreground text-center font-medium">{item.category}</div>
 
               {/* Total Count */}
-              <div className="text-xs text-gray-500">{total}</div>
+              <div className="text-xs text-muted-foreground">{total}</div>
             </div>
           )
         })}
@@ -187,15 +189,15 @@ export function InventoryBarChart({ selectedCategory, onCategorySelect }: Invent
         {/* Tooltip positioned next to the specific bar */}
         {tooltip.visible && (
           <div
-            className="absolute z-10 bg-white border border-gray-200 rounded-lg shadow-lg p-3 pointer-events-none min-w-[140px]"
+            className="absolute z-10 bg-popover border border-border rounded-lg shadow-lg p-3 pointer-events-none min-w-[140px]"
             style={{
               left: tooltip.x,
               top: tooltip.y,
               transform: "translateY(-50%)",
             }}
           >
-            <div className="text-sm font-medium text-gray-900">{tooltip.category}</div>
-            <div className="text-sm text-gray-600">
+            <div className="text-sm font-medium text-popover-foreground">{tooltip.category}</div>
+            <div className="text-sm text-muted-foreground">
               {tooltip.type}: {tooltip.value} items
             </div>
           </div>
@@ -217,18 +219,20 @@ export function InventoryBarChart({ selectedCategory, onCategorySelect }: Invent
                 opacity: getOpacity(key),
               }}
             />
-            <span className="text-sm text-gray-600">{labels[key as keyof typeof labels]}</span>
+            <span className="text-sm text-muted-foreground">{labels[key as keyof typeof labels]}</span>
           </div>
         ))}
       </div>
 
       {/* Selected Category Info */}
       {selectedCategory && (
-        <div className="mt-4 p-3 bg-blue-50 rounded-lg">
-          <div className="text-sm font-medium text-blue-900">
+        <div className="mt-4 p-3 bg-blue-50 dark:bg-blue-950/50 rounded-lg">
+          <div className="text-sm font-medium text-blue-900 dark:text-blue-100">
             Filtered by: {labels[selectedCategory as keyof typeof labels]}
           </div>
-          <div className="text-xs text-blue-700 mt-1">Click the same category again to clear the filter</div>
+          <div className="text-xs text-blue-700 dark:text-blue-300 mt-1">
+            Click the same category again to clear the filter
+          </div>
         </div>
       )}
     </div>
