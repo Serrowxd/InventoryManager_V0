@@ -1,5 +1,7 @@
 "use client"
 
+import type React from "react"
+
 import { useState, useEffect } from "react"
 
 interface InventoryLineChartProps {
@@ -10,6 +12,21 @@ interface InventoryLineChartProps {
 export function InventoryLineChart({ selectedCategory, onCategorySelect }: InventoryLineChartProps) {
   const [data, setData] = useState<any[]>([])
   const [isClient, setIsClient] = useState(false)
+  const [tooltip, setTooltip] = useState<{
+    x: number
+    y: number
+    date: string
+    type: string
+    value: number
+    visible: boolean
+  }>({
+    x: 0,
+    y: 0,
+    date: "",
+    type: "",
+    value: 0,
+    visible: false,
+  })
 
   useEffect(() => {
     setIsClient(true)
@@ -59,8 +76,48 @@ export function InventoryLineChart({ selectedCategory, onCategorySelect }: Inven
     return ((maxValue - value) / (maxValue - minValue)) * 240 + 20
   }
 
+  const handleMouseEnter = (
+    event: React.MouseEvent,
+    date: string,
+    type: string,
+    value: number,
+    x: number,
+    y: number,
+  ) => {
+    const containerRect = event.currentTarget.closest(".h-80")?.getBoundingClientRect()
+    if (containerRect) {
+      setTooltip({
+        x: x,
+        y: y,
+        date,
+        type,
+        value,
+        visible: true,
+      })
+    }
+  }
+
+  const handleMouseLeave = () => {
+    setTooltip((prev) => ({ ...prev, visible: false }))
+  }
+
+  const getTypeLabel = (key: string) => {
+    switch (key) {
+      case "inStock":
+        return "In Stock"
+      case "inTransit":
+        return "In Transit"
+      case "outOfStock":
+        return "Out of Stock"
+      case "suggested":
+        return "Suggested"
+      default:
+        return key
+    }
+  }
+
   return (
-    <div className="h-80 w-full p-4">
+    <div className="h-80 w-full p-4 relative">
       <svg width="100%" height="280" className="overflow-visible">
         {/* Grid lines */}
         <defs>
@@ -100,11 +157,15 @@ export function InventoryLineChart({ selectedCategory, onCategorySelect }: Inven
                     key={`${key}-${index}`}
                     cx={x}
                     cy={y}
-                    r="4"
+                    r="6"
                     fill={color}
                     opacity={getLineOpacity(key)}
-                    className="cursor-pointer transition-opacity duration-200"
+                    className="cursor-pointer transition-all duration-200 hover:r-8"
                     onClick={() => handleLineClick(key)}
+                    onMouseEnter={(e) =>
+                      handleMouseEnter(e, item.date, getTypeLabel(key), item[key as keyof typeof item], x, y)
+                    }
+                    onMouseLeave={handleMouseLeave}
                   />
                 )
               })}
@@ -122,6 +183,23 @@ export function InventoryLineChart({ selectedCategory, onCategorySelect }: Inven
           )
         })}
       </svg>
+
+      {/* Tooltip */}
+      {tooltip.visible && (
+        <div
+          className="absolute z-10 bg-white border border-gray-200 rounded-lg shadow-lg p-3 pointer-events-none"
+          style={{
+            left: tooltip.x + 10,
+            top: tooltip.y - 10,
+            transform: tooltip.x > 400 ? "translateX(-100%)" : "none",
+          }}
+        >
+          <div className="text-sm font-medium text-gray-900">{tooltip.date}</div>
+          <div className="text-sm text-gray-600">
+            {tooltip.type}: {tooltip.value} items
+          </div>
+        </div>
+      )}
 
       {/* Legend */}
       <div className="flex justify-center space-x-4 mt-4">
