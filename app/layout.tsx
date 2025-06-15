@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-        <ThemeProvider defaultTheme="system" storageKey="inventory-dashboard-theme">
+        <ThemeProvider defaultTheme="light" storageKey="inventory-dashboard-theme">
           {children}
         </ThemeProvider>
       </body>
