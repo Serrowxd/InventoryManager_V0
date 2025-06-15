@@ -2,7 +2,7 @@
 
 import type React from "react"
 
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -31,6 +31,26 @@ export function ChatbotModal({ isOpen, onClose }: ChatbotModalProps) {
     },
   ])
   const [inputValue, setInputValue] = useState("")
+  const scrollAreaRef = useRef<HTMLDivElement>(null)
+  const messagesEndRef = useRef<HTMLDivElement>(null)
+
+  // Auto-scroll to bottom when messages change
+  const scrollToBottom = () => {
+    if (messagesEndRef.current) {
+      messagesEndRef.current.scrollIntoView({ behavior: "smooth" })
+    }
+  }
+
+  useEffect(() => {
+    scrollToBottom()
+  }, [messages])
+
+  // Also scroll to bottom when modal opens
+  useEffect(() => {
+    if (isOpen) {
+      setTimeout(scrollToBottom, 100) // Small delay to ensure modal is fully rendered
+    }
+  }, [isOpen])
 
   const handleSendMessage = () => {
     if (!inputValue.trim()) return
@@ -90,7 +110,7 @@ export function ChatbotModal({ isOpen, onClose }: ChatbotModalProps) {
           </DialogTitle>
         </DialogHeader>
 
-        <ScrollArea className="flex-1 pr-4">
+        <ScrollArea className="flex-1 pr-4" ref={scrollAreaRef}>
           <div className="space-y-4">
             {messages.map((message) => (
               <div
@@ -121,6 +141,8 @@ export function ChatbotModal({ isOpen, onClose }: ChatbotModalProps) {
                 )}
               </div>
             ))}
+            {/* Invisible element to scroll to */}
+            <div ref={messagesEndRef} />
           </div>
         </ScrollArea>
 
