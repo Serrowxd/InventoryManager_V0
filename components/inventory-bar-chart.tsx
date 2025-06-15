@@ -87,9 +87,8 @@ export function InventoryBarChart({ selectedCategory, onCategorySelect }: Invent
     const rect = event.currentTarget.getBoundingClientRect()
     const containerRect = event.currentTarget.closest(".h-80")?.getBoundingClientRect()
     if (containerRect) {
-      // Position tooltip to the right side of the chart area
-      const chartWidth = containerRect.width
-      const tooltipX = chartWidth - 200 // Position near the right edge
+      // Position tooltip to the right of the specific bar
+      const tooltipX = rect.left - containerRect.left + rect.width + 12 // 12px offset from bar
       const tooltipY = rect.top - containerRect.top + rect.height / 2
 
       setTooltip({
@@ -185,12 +184,12 @@ export function InventoryBarChart({ selectedCategory, onCategorySelect }: Invent
           )
         })}
 
-        {/* Tooltip positioned to the side */}
+        {/* Tooltip positioned next to the specific bar */}
         {tooltip.visible && (
           <div
-            className="absolute z-10 bg-white border border-gray-200 rounded-lg shadow-lg p-3 pointer-events-none min-w-[160px]"
+            className="absolute z-10 bg-white border border-gray-200 rounded-lg shadow-lg p-3 pointer-events-none min-w-[140px]"
             style={{
-              right: "16px", // Fixed position from right edge
+              left: tooltip.x,
               top: tooltip.y,
               transform: "translateY(-50%)",
             }}
