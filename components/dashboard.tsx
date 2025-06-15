@@ -8,7 +8,7 @@ import { InventoryBarChart } from "@/components/inventory-bar-chart"
 import { InventoryPieChart } from "@/components/inventory-pie-chart"
 import { InventoryLineChart } from "@/components/inventory-line-chart"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
-import { ThemeToggle } from "@/components/theme-toggle"
+import { ThemeToggleSimple } from "@/components/theme-toggle-simple"
 
 interface DashboardProps {
   onOpenChatbot: () => void
@@ -90,7 +90,7 @@ export function Dashboard({ onOpenChatbot }: DashboardProps) {
             <h1 className="text-2xl font-semibold text-foreground">Inventory Dashboard</h1>
             <p className="text-muted-foreground mt-1">Monitor and manage your inventory in real-time</p>
           </div>
-          <ThemeToggle />
+          <ThemeToggleSimple />
         </div>
 
         {/* Stats Cards */}
