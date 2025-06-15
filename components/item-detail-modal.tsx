@@ -118,15 +118,15 @@ export function ItemDetailModal({ item, isOpen, onClose }: ItemDetailModalProps)
   const getStatusColor = (status: string) => {
     switch (status) {
       case "in_stock":
-        return "text-green-700 bg-green-100"
+        return "text-green-700 bg-green-100 dark:text-green-400 dark:bg-green-900/30"
       case "low_stock":
-        return "text-yellow-700 bg-yellow-100"
+        return "text-yellow-700 bg-yellow-100 dark:text-yellow-400 dark:bg-yellow-900/30"
       case "out_of_stock":
-        return "text-red-700 bg-red-100"
+        return "text-red-700 bg-red-100 dark:text-red-400 dark:bg-red-900/30"
       case "suggested":
-        return "text-blue-700 bg-blue-100"
+        return "text-blue-700 bg-blue-100 dark:text-blue-400 dark:bg-blue-900/30"
       default:
-        return "text-gray-700 bg-gray-100"
+        return "text-muted-foreground bg-muted"
     }
   }
 
@@ -192,7 +192,7 @@ export function ItemDetailModal({ item, isOpen, onClose }: ItemDetailModalProps)
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle className="text-xl font-semibold">{item.name}</DialogTitle>
+          <DialogTitle className="text-xl font-semibold text-foreground">{item.name}</DialogTitle>
         </DialogHeader>
 
         <div className="space-y-6">
@@ -200,26 +200,28 @@ export function ItemDetailModal({ item, isOpen, onClose }: ItemDetailModalProps)
           <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
             <Card>
               <CardContent className="p-4">
-                <div className="text-2xl font-bold text-green-600">{item.onHand}</div>
-                <div className="text-sm text-gray-600">In Stock</div>
+                <div className="text-2xl font-bold text-green-600 dark:text-green-400">{item.onHand}</div>
+                <div className="text-sm text-muted-foreground">In Stock</div>
               </CardContent>
             </Card>
             <Card>
               <CardContent className="p-4">
-                <div className="text-2xl font-bold text-yellow-600">{item.inTransit}</div>
-                <div className="text-sm text-gray-600">In Transit</div>
+                <div className="text-2xl font-bold text-yellow-600 dark:text-yellow-400">{item.inTransit}</div>
+                <div className="text-sm text-muted-foreground">In Transit</div>
               </CardContent>
             </Card>
             <Card>
               <CardContent className="p-4">
-                <div className="text-2xl font-bold text-blue-600">{item.onHand + item.inTransit}</div>
-                <div className="text-sm text-gray-600">Total Available</div>
+                <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">
+                  {item.onHand + item.inTransit}
+                </div>
+                <div className="text-sm text-muted-foreground">Total Available</div>
               </CardContent>
             </Card>
             <Card>
               <CardContent className="p-4">
-                <div className="text-lg font-bold text-gray-900">{formatCurrency(totalInvestment)}</div>
-                <div className="text-sm text-gray-600">Total Investment</div>
+                <div className="text-lg font-bold text-foreground">{formatCurrency(totalInvestment)}</div>
+                <div className="text-sm text-muted-foreground">Total Investment</div>
               </CardContent>
             </Card>
             <Card>
@@ -237,7 +239,7 @@ export function ItemDetailModal({ item, isOpen, onClose }: ItemDetailModalProps)
           <Card>
             <CardHeader>
               <div className="flex items-center justify-between">
-                <CardTitle>Sales vs Demand Trends</CardTitle>
+                <CardTitle className="text-foreground">Sales vs Demand Trends</CardTitle>
                 <div className="flex gap-2">
                   <Button
                     variant={timeRange === "1d" ? "default" : "outline"}
@@ -269,7 +271,7 @@ export function ItemDetailModal({ item, isOpen, onClose }: ItemDetailModalProps)
                   {/* Grid lines */}
                   <defs>
                     <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#f1f5f9" strokeWidth="1" />
+                      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="hsl(var(--border))" strokeWidth="1" />
                     </pattern>
                   </defs>
                   <rect width="100%" height="100%" fill="url(#grid)" />
@@ -349,15 +351,15 @@ export function ItemDetailModal({ item, isOpen, onClose }: ItemDetailModalProps)
                 {/* Tooltip */}
                 {tooltip.visible && (
                   <div
-                    className="absolute z-10 bg-white border border-gray-200 rounded-lg shadow-lg p-3 pointer-events-none"
+                    className="absolute z-10 bg-popover border border-border rounded-lg shadow-lg p-3 pointer-events-none"
                     style={{
                       left: tooltip.x + 10,
                       top: tooltip.y - 10,
                       transform: tooltip.x > 400 ? "translateX(-100%)" : "none",
                     }}
                   >
-                    <div className="text-sm font-medium text-gray-900">{tooltip.date}</div>
-                    <div className="text-sm text-gray-600">
+                    <div className="text-sm font-medium text-popover-foreground">{tooltip.date}</div>
+                    <div className="text-sm text-muted-foreground">
                       {tooltip.type === "sales" ? "Sales" : "Estimated Demand"}: {tooltip.value} units
                     </div>
                   </div>
@@ -367,11 +369,11 @@ export function ItemDetailModal({ item, isOpen, onClose }: ItemDetailModalProps)
                 <div className="flex justify-center gap-6 mt-4">
                   <div className="flex items-center gap-2">
                     <div className="w-4 h-0.5 bg-red-500"></div>
-                    <span className="text-sm text-gray-600">Actual Sales</span>
+                    <span className="text-sm text-muted-foreground">Actual Sales</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="w-4 h-0.5 bg-blue-500 border-dashed border-t-2 border-blue-500"></div>
-                    <span className="text-sm text-gray-600">Estimated Demand</span>
+                    <span className="text-sm text-muted-foreground">Estimated Demand</span>
                   </div>
                 </div>
               </div>
@@ -381,10 +383,10 @@ export function ItemDetailModal({ item, isOpen, onClose }: ItemDetailModalProps)
           {/* AI Recommendation */}
           <Card>
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">🤖 AI Recommendation</CardTitle>
+              <CardTitle className="flex items-center gap-2 text-foreground">🤖 AI Recommendation</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-gray-700 leading-relaxed">{getAIRecommendation()}</p>
+              <p className="text-muted-foreground leading-relaxed">{getAIRecommendation()}</p>
             </CardContent>
           </Card>
         </div>
