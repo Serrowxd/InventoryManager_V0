@@ -1,0 +1,642 @@
+[
+  {
+    "id": 1,
+    "category": "Roles and Responsibilities",
+    "question": "What is the primary role of an unarmed security officer?",
+    "options": [
+      "To arrest suspects and conduct investigations",
+      "To observe and report suspicious activities",
+      "To carry weapons and use force when necessary",
+      "To act as a police officer on private property"
+    ],
+    "correct": 1,
+    "explanation": "The primary role of an unarmed security officer is to observe and report. They are not law enforcement officers and should not attempt arrests or use force beyond what is legally permitted for private citizens."
+  },
+  {
+    "id": 2,
+    "category": "Texas Laws and Regulations",
+    "question": "Under Texas Occupations Code Chapter 1702, what is required for someone to work as a security officer?",
+    "options": [
+      "Only a high school diploma",
+      "A valid security officer license",
+      "Police academy training",
+      "Military experience"
+    ],
+    "correct": 1,
+    "explanation": "Texas Occupations Code Chapter 1702 requires all security officers to obtain a valid security officer license before working in the field."
+  },
+  {
+    "id": 3,
+    "category": "Security Communications",
+    "question": "When writing a security report, what information should be included first?",
+    "options": [
+      "Personal opinions about the incident",
+      "Who, what, when, where, and how",
+      "Recommendations for future prevention",
+      "Names of all witnesses present"
+    ],
+    "correct": 1,
+    "explanation": "Security reports should begin with the basic facts: who was involved, what happened, when it occurred, where it took place, and how it happened. This provides a clear foundation for the report."
+  },
+  {
+    "id": 4,
+    "category": "Emergency Response",
+    "question": "In case of a medical emergency, what should be your first priority as a security officer?",
+    "options": [
+      "Move the injured person to safety",
+      "Call 911 and request medical assistance",
+      "Attempt to treat the injuries yourself",
+      "Secure the scene and prevent others from helping"
+    ],
+    "correct": 1,
+    "explanation": "The first priority in a medical emergency is to call 911 and request professional medical assistance. Only trained medical professionals should provide treatment."
+  },
+  {
+    "id": 5,
+    "category": "Ethical Standards",
+    "question": "A security officer should never:",
+    "options": [
+      "Wear a uniform while on duty",
+      "Report suspicious activities to supervisors",
+      "Represent themselves as a police officer",
+      "Patrol assigned areas regularly"
+    ],
+    "correct": 2,
+    "explanation": "Security officers must never represent themselves as police officers. This is illegal and can result in criminal charges and loss of security license."
+  },
+  {
+    "id": 6,
+    "category": "Roles and Responsibilities",
+    "question": "What is the proper procedure for access control at a secured facility?",
+    "options": [
+      "Allow anyone who looks professional to enter",
+      "Check identification and verify authorization",
+      "Only allow people you personally know",
+      "Let people follow others through the entrance"
+    ],
+    "correct": 1,
+    "explanation": "Proper access control requires checking identification and verifying that each person is authorized to enter the facility. This prevents unauthorized access."
+  },
+  {
+    "id": 7,
+    "category": "Texas Laws and Regulations",
+    "question": "Under Texas law, when can a security officer make a citizen's arrest?",
+    "options": [
+      "Whenever they suspect someone of wrongdoing",
+      "Only when a felony has been committed in their presence",
+      "When their supervisor gives permission",
+      "Never, security officers cannot make arrests"
+    ],
+    "correct": 1,
+    "explanation": "In Texas, security officers can make a citizen's arrest only when a felony has been committed in their presence. They have the same arrest powers as any private citizen, no more."
+  },
+  {
+    "id": 8,
+    "category": "Security Communications",
+    "question": "What is the most effective way to de-escalate a verbal confrontation?",
+    "options": [
+      "Raise your voice to show authority",
+      "Remain calm and listen actively",
+      "Threaten to call the police immediately",
+      "Walk away and ignore the situation"
+    ],
+    "correct": 1,
+    "explanation": "De-escalation is best achieved by remaining calm, listening actively to the person's concerns, and speaking in a non-threatening manner."
+  },
+  {
+    "id": 9,
+    "category": "Emergency Response",
+    "question": "If you discover a fire in a building, what should you do first?",
+    "options": [
+      "Try to extinguish the fire yourself",
+      "Activate the fire alarm and call 911",
+      "Investigate to determine the cause",
+      "Wait to see if the fire spreads"
+    ],
+    "correct": 1,
+    "explanation": "Upon discovering a fire, immediately activate the fire alarm system and call 911. This ensures proper emergency response and evacuation procedures begin immediately."
+  },
+  {
+    "id": 10,
+    "category": "Ethical Standards",
+    "question": "What should you do if you witness another security officer violating company policy?",
+    "options": [
+      "Ignore it if it doesn't affect you directly",
+      "Confront the officer publicly",
+      "Report it to your supervisor",
+      "Handle it yourself without involving management"
+    ],
+    "correct": 2,
+    "explanation": "Professional conduct requires reporting policy violations to supervisors. This maintains the integrity of the security operation and ensures proper corrective action."
+  },
+  {
+    "id": 11,
+    "category": "Roles and Responsibilities",
+    "question": "During a patrol, you notice an unlocked door that should be secured. What should you do?",
+    "options": [
+      "Leave it unlocked and continue your patrol",
+      "Lock the door and note it in your report",
+      "Wait for someone else to handle it",
+      "Prop the door open for easier access"
+    ],
+    "correct": 1,
+    "explanation": "Security officers should secure unlocked doors that should be locked and document this action in their patrol report to maintain facility security."
+  },
+  {
+    "id": 12,
+    "category": "Texas Laws and Regulations",
+    "question": "What is the maximum amount of force a security officer can use?",
+    "options": [
+      "Whatever force they deem necessary",
+      "Only the minimum force reasonable to protect themselves or others",
+      "No force at all under any circumstances",
+      "Force equal to what police officers can use"
+    ],
+    "correct": 1,
+    "explanation": "Security officers may only use the minimum amount of force that is reasonable and necessary to protect themselves or others from imminent harm."
+  },
+  {
+    "id": 13,
+    "category": "Security Communications",
+    "question": "When should you use radio communication during your shift?",
+    "options": [
+      "Only during emergencies",
+      "For regular check-ins and incident reporting",
+      "To chat with other officers",
+      "Only when specifically asked by supervisors"
+    ],
+    "correct": 1,
+    "explanation": "Radio communication should be used for regular check-ins, incident reporting, and any security-related communications as required by company policy."
+  },
+  {
+    "id": 14,
+    "category": "Emergency Response",
+    "question": "What information should you provide when calling 911?",
+    "options": [
+      "Only your name and location",
+      "Location, nature of emergency, and your callback number",
+      "Just the address where help is needed",
+      "A detailed history of what led to the emergency"
+    ],
+    "correct": 1,
+    "explanation": "When calling 911, provide the location, nature of the emergency, and your callback number. Stay on the line to answer any additional questions from the dispatcher."
+  },
+  {
+    "id": 15,
+    "category": "Ethical Standards",
+    "question": "How should you handle confidential information you learn while on duty?",
+    "options": [
+      "Share it with family and friends",
+      "Keep it strictly confidential",
+      "Post about it on social media",
+      "Discuss it with other security officers"
+    ],
+    "correct": 1,
+    "explanation": "All information learned while on duty should be kept strictly confidential and only shared with authorized personnel as required for security purposes."
+  },
+  {
+    "id": 16,
+    "category": "Roles and Responsibilities",
+    "question": "What is the purpose of maintaining a security log?",
+    "options": [
+      "To track personal activities during the shift",
+      "To document all security-related activities and observations",
+      "To record complaints about management",
+      "To note weather conditions only"
+    ],
+    "correct": 1,
+    "explanation": "Security logs document all security-related activities, observations, and incidents during a shift, providing a legal record of events."
+  },
+  {
+    "id": 17,
+    "category": "Texas Laws and Regulations",
+    "question": "Under Texas law, what must a security officer do before detaining someone?",
+    "options": [
+      "Get permission from their supervisor",
+      "Have reasonable suspicion of criminal activity",
+      "Wait for police to arrive",
+      "Obtain a warrant"
+    ],
+    "correct": 1,
+    "explanation": "Before detaining someone, a security officer must have reasonable suspicion that the person has committed or is committing a criminal offense."
+  },
+  {
+    "id": 18,
+    "category": "Security Communications",
+    "question": "What should be avoided when writing a security report?",
+    "options": [
+      "Specific times and dates",
+      "Names of people involved",
+      "Personal opinions and assumptions",
+      "Description of what happened"
+    ],
+    "correct": 2,
+    "explanation": "Security reports should contain only facts and observations, not personal opinions or assumptions about what might have happened."
+  },
+  {
+    "id": 19,
+    "category": "Emergency Response",
+    "question": "If someone is having a seizure, what should you do?",
+    "options": [
+      "Hold them down to stop the shaking",
+      "Put something in their mouth to prevent tongue biting",
+      "Clear the area of hazards and call 911",
+      "Give them water to drink"
+    ],
+    "correct": 2,
+    "explanation": "During a seizure, clear the area of hazards, call 911, and do not restrain the person or put anything in their mouth. Let the seizure run its course."
+  },
+  {
+    "id": 20,
+    "category": "Ethical Standards",
+    "question": "What should you do if offered a gift by someone you encounter while on duty?",
+    "options": [
+      "Accept it as a token of appreciation",
+      "Politely decline and report the offer",
+      "Accept it only if it's inexpensive",
+      "Share it with other security officers"
+    ],
+    "correct": 1,
+    "explanation": "Security officers should politely decline gifts and report such offers to supervisors to avoid any appearance of impropriety or compromise of professional duties."
+  },
+  {
+    "id": 21,
+    "category": "Roles and Responsibilities",
+    "question": "When conducting a security patrol, you should:",
+    "options": [
+      "Follow the same route at the same time each day",
+      "Vary your route and timing to be unpredictable",
+      "Only patrol when specifically requested",
+      "Focus only on high-value areas"
+    ],
+    "correct": 1,
+    "explanation": "Varying patrol routes and timing makes it difficult for potential criminals to predict security presence and plan illegal activities."
+  },
+  {
+    "id": 22,
+    "category": "Texas Laws and Regulations",
+    "question": "What is required for a security officer license to remain valid in Texas?",
+    "options": [
+      "Annual renewal only",
+      "Continuing education and renewal",
+      "No requirements after initial issuance",
+      "Only background check updates"
+    ],
+    "correct": 1,
+    "explanation": "Texas requires security officers to complete continuing education requirements and renew their licenses regularly to maintain validity."
+  },
+  {
+    "id": 23,
+    "category": "Security Communications",
+    "question": "When dealing with an upset customer or visitor, you should:",
+    "options": [
+      "Tell them to calm down immediately",
+      "Listen to their concerns and respond professionally",
+      "Ignore them until they stop complaining",
+      "Threaten to have them removed"
+    ],
+    "correct": 1,
+    "explanation": "Professional customer service requires listening to concerns and responding in a calm, professional manner to resolve issues when possible."
+  },
+  {
+    "id": 24,
+    "category": "Emergency Response",
+    "question": "What is the first step in responding to a bomb threat?",
+    "options": [
+      "Search for the device yourself",
+      "Evacuate the area and call 911",
+      "Ignore it if it seems fake",
+      "Try to negotiate with the caller"
+    ],
+    "correct": 1,
+    "explanation": "All bomb threats must be taken seriously. Immediately evacuate the area and call 911 to report the threat to proper authorities."
+  },
+  {
+    "id": 25,
+    "category": "Ethical Standards",
+    "question": "If you make a mistake while on duty, you should:",
+    "options": [
+      "Try to cover it up to avoid trouble",
+      "Report it honestly to your supervisor",
+      "Blame someone else for the error",
+      "Hope no one notices"
+    ],
+    "correct": 1,
+    "explanation": "Professional integrity requires honestly reporting mistakes to supervisors so they can be properly addressed and corrected."
+  },
+  {
+    "id": 26,
+    "category": "Roles and Responsibilities",
+    "question": "What should you do if you observe someone taking photographs of sensitive areas?",
+    "options": [
+      "Ignore it unless they're causing damage",
+      "Approach them and ask about their purpose",
+      "Immediately call police",
+      "Take their camera away"
+    ],
+    "correct": 1,
+    "explanation": "Politely approach and inquire about their purpose. Photography of sensitive areas may be prohibited and should be investigated according to site policies."
+  },
+  {
+    "id": 27,
+    "category": "Texas Laws and Regulations",
+    "question": "A security officer's authority to detain someone is limited to:",
+    "options": [
+      "Anyone they find suspicious",
+      "People who refuse to show ID",
+      "Situations involving reasonable suspicion of criminal activity",
+      "Anyone on the property after hours"
+    ],
+    "correct": 2,
+    "explanation": "Detention authority is limited to situations where there is reasonable suspicion that a person has committed or is committing a criminal offense."
+  },
+  {
+    "id": 28,
+    "category": "Security Communications",
+    "question": "What is the best way to handle a language barrier when communicating?",
+    "options": [
+      "Speak louder and slower",
+      "Use simple words and gestures, seek translation help if needed",
+      "Give up and walk away",
+      "Assume they understand and continue normally"
+    ],
+    "correct": 1,
+    "explanation": "Use simple words, clear gestures, and seek translation assistance when needed to ensure effective communication across language barriers."
+  },
+  {
+    "id": 29,
+    "category": "Emergency Response",
+    "question": "If you smell gas in a building, you should:",
+    "options": [
+      "Light a match to see better",
+      "Turn on lights to investigate",
+      "Evacuate the area and call the gas company",
+      "Open windows and continue working"
+    ],
+    "correct": 2,
+    "explanation": "Gas leaks are extremely dangerous. Evacuate the area immediately, avoid any ignition sources, and call the gas company and emergency services."
+  },
+  {
+    "id": 30,
+    "category": "Ethical Standards",
+    "question": "What should you do if you witness illegal activity while off duty?",
+    "options": [
+      "Ignore it since you're not working",
+      "Report it to appropriate authorities",
+      "Handle it yourself as a security officer",
+      "Wait until your next shift to report it"
+    ],
+    "correct": 1,
+    "explanation": "Citizens have a responsibility to report illegal activity to appropriate authorities, regardless of whether they are on or off duty."
+  },
+  {
+    "id": 31,
+    "category": "Roles and Responsibilities",
+    "question": "When should incident reports be completed?",
+    "options": [
+      "At the end of the week",
+      "As soon as possible after the incident",
+      "Only for major incidents",
+      "When specifically requested by management"
+    ],
+    "correct": 1,
+    "explanation": "Incident reports should be completed as soon as possible after an incident occurs while details are fresh and accurate."
+  },
+  {
+    "id": 32,
+    "category": "Texas Laws and Regulations",
+    "question": "What is the penalty for working as a security officer without a proper license in Texas?",
+    "options": [
+      "A warning for first offense",
+      "Criminal charges and fines",
+      "Suspension from other jobs",
+      "Community service only"
+    ],
+    "correct": 1,
+    "explanation": "Working as a security officer without proper licensing in Texas can result in criminal charges and significant fines."
+  },
+  {
+    "id": 33,
+    "category": "Security Communications",
+    "question": "When using a two-way radio, you should:",
+    "options": [
+      "Speak as quickly as possible",
+      "Use clear, concise language",
+      "Use codes that others won't understand",
+      "Keep conversations as long as needed"
+    ],
+    "correct": 1,
+    "explanation": "Radio communications should be clear, concise, and professional to ensure effective communication and efficient use of radio channels."
+  },
+  {
+    "id": 34,
+    "category": "Emergency Response",
+    "question": "What should you do if you find someone unconscious?",
+    "options": [
+      "Move them to a more comfortable position",
+      "Check for responsiveness and call 911",
+      "Give them water to wake them up",
+      "Leave them alone until they wake up"
+    ],
+    "correct": 1,
+    "explanation": "Check for responsiveness by calling out and gently tapping their shoulders. If unresponsive, call 911 immediately and follow dispatcher instructions."
+  },
+  {
+    "id": 35,
+    "category": "Ethical Standards",
+    "question": "How should you dress and present yourself while on duty?",
+    "options": [
+      "However you feel comfortable",
+      "In a professional, neat, and clean manner",
+      "To intimidate potential troublemakers",
+      "Casually to blend in with the public"
+    ],
+    "correct": 1,
+    "explanation": "Security officers should maintain a professional appearance that reflects positively on their employer and the security profession."
+  },
+  {
+    "id": 36,
+    "category": "Roles and Responsibilities",
+    "question": "What is the primary purpose of CCTV monitoring?",
+    "options": [
+      "To entertain security officers during quiet periods",
+      "To observe and detect suspicious activities",
+      "To spy on employees' personal activities",
+      "To record everything for legal purposes"
+    ],
+    "correct": 1,
+    "explanation": "CCTV monitoring is primarily used to observe areas for suspicious activities, security breaches, and safety concerns to enable appropriate response."
+  },
+  {
+    "id": 37,
+    "category": "Texas Laws and Regulations",
+    "question": "Under what circumstances can a security officer search someone's personal belongings?",
+    "options": [
+      "Whenever they feel it's necessary",
+      "Only with the person's consent or legal authority",
+      "Any time they're on private property",
+      "When their supervisor approves it"
+    ],
+    "correct": 1,
+    "explanation": "Searches of personal belongings require either the person's voluntary consent or specific legal authority. Security officers cannot conduct searches arbitrarily."
+  },
+  {
+    "id": 38,
+    "category": "Security Communications",
+    "question": "What information should NOT be included in a security report?",
+    "options": [
+      "Time and date of incident",
+      "Names of people involved",
+      "Speculation about motives",
+      "Description of what was observed"
+    ],
+    "correct": 2,
+    "explanation": "Security reports should contain only factual observations, not speculation about why something happened or what someone might have been thinking."
+  },
+  {
+    "id": 39,
+    "category": "Emergency Response",
+    "question": "If someone is choking and cannot speak or cough, you should:",
+    "options": [
+      "Give them water to drink",
+      "Perform the Heimlich maneuver if trained",
+      "Tell them to try coughing harder",
+      "Wait for them to clear it themselves"
+    ],
+    "correct": 1,
+    "explanation": "If trained in the Heimlich maneuver, it should be performed on a choking victim who cannot speak or cough. If not trained, call 911 immediately."
+  },
+  {
+    "id": 40,
+    "category": "Ethical Standards",
+    "question": "What should you do if you're asked to do something that violates company policy?",
+    "options": [
+      "Do it anyway to avoid conflict",
+      "Refuse and report the request to your supervisor",
+      "Do it but document that you were told to",
+      "Quit your job immediately"
+    ],
+    "correct": 1,
+    "explanation": "Never violate company policy even when asked to do so. Politely refuse and report the request to your supervisor for proper handling."
+  },
+  {
+    "id": 41,
+    "category": "Roles and Responsibilities",
+    "question": "When escorting a visitor through a secure facility, you should:",
+    "options": [
+      "Let them walk ahead while you follow",
+      "Stay with them at all times and control their access",
+      "Give them a map and let them find their own way",
+      "Only escort them to the entrance"
+    ],
+    "correct": 1,
+    "explanation": "When escorting visitors, maintain control by staying with them at all times and ensuring they only access authorized areas."
+  },
+  {
+    "id": 42,
+    "category": "Texas Laws and Regulations",
+    "question": "What must a security officer do if they witness a felony in progress?",
+    "options": [
+      "Immediately intervene to stop it",
+      "Call 911 and observe from a safe distance",
+      "Wait until it's over to report it",
+      "Try to negotiate with the perpetrator"
+    ],
+    "correct": 1,
+    "explanation": "When witnessing a felony in progress, call 911 immediately and observe from a safe distance to provide information to responding officers."
+  },
+  {
+    "id": 43,
+    "category": "Security Communications",
+    "question": "How should you handle media representatives who want information about an incident?",
+    "options": [
+      "Give them all the details you know",
+      "Refer them to authorized company spokespersons",
+      "Tell them to go away",
+      "Make up information to get rid of them"
+    ],
+    "correct": 1,
+    "explanation": "Media inquiries should always be referred to authorized company spokespersons. Security officers should not provide information to media representatives."
+  },
+  {
+    "id": 44,
+    "category": "Emergency Response",
+    "question": "What should you do if you discover a suspicious package?",
+    "options": [
+      "Open it to see what's inside",
+      "Move it to a safer location",
+      "Don't touch it and call 911",
+      "Ask others what they think it is"
+    ],
+    "correct": 2,
+    "explanation": "Never touch or move suspicious packages. Evacuate the area, don't touch the package, and call 911 to report it to proper authorities."
+  },
+  {
+    "id": 45,
+    "category": "Ethical Standards",
+    "question": "If you're offered a better paying job by a client while on duty, you should:",
+    "options": [
+      "Accept immediately",
+      "Discuss it with your current employer first",
+      "Negotiate for better pay with the client",
+      "Keep it secret from your employer"
+    ],
+    "correct": 1,
+    "explanation": "Professional ethics require discussing such offers with your current employer first, as there may be contractual obligations or conflicts of interest."
+  },
+  {
+    "id": 46,
+    "category": "Roles and Responsibilities",
+    "question": "What is the most important quality for a security officer to possess?",
+    "options": ["Physical strength", "Intimidating appearance", "Good observation skills", "Military experience"],
+    "correct": 2,
+    "explanation": "Good observation skills are essential for security officers to detect suspicious activities, safety hazards, and security breaches effectively."
+  },
+  {
+    "id": 47,
+    "category": "Texas Laws and Regulations",
+    "question": "How long must security officers keep their training records in Texas?",
+    "options": ["One year", "Two years", "Five years", "Permanently"],
+    "correct": 1,
+    "explanation": "Texas law requires security officers to maintain their training records for at least two years for inspection by regulatory authorities."
+  },
+  {
+    "id": 48,
+    "category": "Security Communications",
+    "question": "When taking a statement from a witness, you should:",
+    "options": [
+      "Ask leading questions to get the answers you want",
+      "Let them tell their story in their own words",
+      "Interrupt frequently to clarify details",
+      "Only write down what seems important"
+    ],
+    "correct": 1,
+    "explanation": "Allow witnesses to tell their story in their own words without leading questions to get the most accurate and complete account of events."
+  },
+  {
+    "id": 49,
+    "category": "Emergency Response",
+    "question": "If you smell smoke but can't see fire, you should:",
+    "options": [
+      "Ignore it unless you see flames",
+      "Investigate the source and call 911",
+      "Wait to see if the smell gets stronger",
+      "Open windows to clear the air"
+    ],
+    "correct": 1,
+    "explanation": "Smoke without visible fire still indicates a potential fire hazard. Investigate the source safely and call 911 to report the situation."
+  },
+  {
+    "id": 50,
+    "category": "Ethical Standards",
+    "question": "What should you do if you're unsure about the proper procedure in a situation?",
+    "options": [
+      "Make your best guess and proceed",
+      "Ask your supervisor or consult company policies",
+      "Do nothing and hope the situation resolves itself",
+      "Copy what you've seen other officers do"
+    ],
+    "correct": 1,
+    "explanation": "When unsure about proper procedures, always consult with supervisors or company policies to ensure you're following correct protocols."
+  }
+]
